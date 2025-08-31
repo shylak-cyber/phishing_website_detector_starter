@@ -1,0 +1,31 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phishing Website Detector</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1>🛡️ Phishing Website Detector</h1>
+      <p class="muted">Paste a URL to check if it looks suspicious. This runs a local ML model with explainable features.</p>
+      <div class="input-row">
+        <input id="urlInput" type="text" placeholder="e.g. https://secure-payments.example.com/login">
+        <button id="checkBtn">Check</button>
+      </div>
+      <div id="result" class="result hidden"></div>
+      <div id="features" class="features hidden"></div>
+      <footer class="muted small">
+        For education/demo only. Always verify before entering credentials.
+      </footer>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
